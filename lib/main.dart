@@ -1,3 +1,4 @@
+import 'package:book/constant.dart';
 import 'package:book/features/splash/presentation/view/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,8 +12,10 @@ class EasyBookApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  GetMaterialApp(
-       home:  SplashView(),
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData().copyWith(scaffoldBackgroundColor: KPrimaryColor),
+      home: SplashView(),
     );
   }
 }
