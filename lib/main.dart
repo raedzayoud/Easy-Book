@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 void main() {
   runApp(const EasyBookApp());
 }
-
 class EasyBookApp extends StatelessWidget {
   const EasyBookApp({super.key});
 
