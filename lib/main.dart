@@ -14,7 +14,7 @@ class EasyBookApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData().copyWith(scaffoldBackgroundColor: KPrimaryColor),
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: KPrimaryColor),
       home: SplashView(),
     );
   }
