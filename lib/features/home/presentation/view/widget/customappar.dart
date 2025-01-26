@@ -10,7 +10,7 @@ class CustomAppar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 35, horizontal: 10),
+      padding: const EdgeInsets.only(top: 40,bottom: 20),
       child: Row(
         children: [
           Container(height: 100, child: Image.asset(AppImages.logo)),
