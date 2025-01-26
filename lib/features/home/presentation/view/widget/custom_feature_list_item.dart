@@ -12,7 +12,7 @@ class CustomFeatureListItem extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemCount: 3,
           itemBuilder: (context, index) {
-            return CustomListItem();
+            return CustomItem();
           }),
     );
   }
