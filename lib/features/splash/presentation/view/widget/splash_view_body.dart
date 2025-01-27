@@ -3,7 +3,7 @@ import 'package:book/core/utlis/assets.dart';
 import 'package:book/features/home/presentation/view/home_view.dart';
 import 'package:book/features/splash/presentation/view/widget/animatedbuilder.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -53,8 +53,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Future.delayed(
       const Duration(seconds: 5),
       () {
-        Get.to(() => HomeView(),
-            transition: Transition.fade, duration: KTransmisstionDuration);
+         
+         GoRouter.of(context).push("/homeview");
+         
+        // Get.to(() => HomeView(),
+        //     transition: Transition.fade, duration: KTransmisstionDuration);
       },
     );
   }

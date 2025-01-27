@@ -1,4 +1,4 @@
-import 'package:book/features/home/presentation/view/widget/custom_list_item.dart';
+import 'package:book/features/home/presentation/view/widget/custom_item.dart';
 import 'package:flutter/material.dart';
 
 class CustomFeatureListItem extends StatelessWidget {

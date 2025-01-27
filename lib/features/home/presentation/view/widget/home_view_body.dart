@@ -1,6 +1,7 @@
 import 'package:book/core/utlis/styles.dart';
 import 'package:book/features/home/presentation/view/widget/custom_feature_list_item.dart';
 import 'package:book/features/home/presentation/view/widget/custom_list_best_seller.dart';
+import 'package:book/features/home/presentation/view/widget/custom_list_item.dart';
 import 'package:book/features/home/presentation/view/widget/customappar.dart';
 import 'package:flutter/material.dart';
 
@@ -40,21 +41,5 @@ class HomeViewBody extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-class CustomListItems extends StatelessWidget {
-  const CustomListItems({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-        padding: EdgeInsets.zero,
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: 5,
-        itemBuilder: (context, index) {
-          return CustomListBestSeller();
-        });
   }
 }
