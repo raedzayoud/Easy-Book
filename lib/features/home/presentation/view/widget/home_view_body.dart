@@ -1,6 +1,6 @@
-import 'package:book/core/utlis/assets.dart';
 import 'package:book/core/utlis/styles.dart';
 import 'package:book/features/home/presentation/view/widget/custom_feature_list_item.dart';
+import 'package:book/features/home/presentation/view/widget/custom_list_best_seller.dart';
 import 'package:book/features/home/presentation/view/widget/customappar.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +11,7 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -21,7 +21,10 @@ class HomeViewBody extends StatelessWidget {
               "Best Seller",
               style: AppStyles.textStyle18,
             ),
-            CustomListBestSeller()
+            const SizedBox(
+              height: 10,
+            ),
+            CustomListItems(),
           ],
         ),
       ),
@@ -29,25 +32,17 @@ class HomeViewBody extends StatelessWidget {
   }
 }
 
-class CustomListBestSeller extends StatelessWidget {
-  const CustomListBestSeller({super.key});
+class CustomListItems extends StatelessWidget {
+  const CustomListItems({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 10),
-      child: SizedBox(
-        height: 150,
-        child: AspectRatio(
-          aspectRatio: 2.5 / 4,
-          child: Container(
-            decoration: const BoxDecoration(
-                //color: Colors.red,
-                image: DecorationImage(
-                    fit: BoxFit.fill, image: AssetImage(AppImages.testimage))),
-          ),
-        ),
-      ),
+    return Expanded(
+      child: ListView.builder(
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return CustomListBestSeller();
+          }),
     );
   }
 }
