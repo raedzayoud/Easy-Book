@@ -9,9 +9,10 @@ class RatingBook extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      //mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(FontAwesomeIcons.solidStar,color: Colors.yellow,),
-        const SizedBox(width: 6.3,),
+        Icon(FontAwesomeIcons.solidStar,color: const Color.fromARGB(255, 201, 189, 80),size: 16,),
+        const SizedBox(width: 9.3,),
         Text("4.8",style: AppStyles.textStyle16,),
         const SizedBox(width: 5,),
         Text("(2456)",style: AppStyles.textStyle14.copyWith(
