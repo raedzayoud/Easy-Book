@@ -1,3 +1,4 @@
+import 'package:book/features/home/presentation/view/book_details_view.dart';
 import 'package:book/features/home/presentation/view/home_view.dart';
 import 'package:book/features/splash/presentation/view/splash_view.dart';
 import 'package:go_router/go_router.dart';
@@ -5,6 +6,7 @@ import 'package:go_router/go_router.dart';
 abstract class AppRouter{
 
  static String KHomeview='/homeview' ;
+ static String KBookDetails='/bookdetails' ;
 
  static GoRouter router = GoRouter(
   routes: [
@@ -15,6 +17,10 @@ abstract class AppRouter{
     GoRoute(
       path:KHomeview ,
       builder: (context, state) => HomeView(),
+    ),
+    GoRoute(
+      path:KBookDetails ,
+      builder: (context, state) => BookDetailsView(),
     ),
   ],
 );
