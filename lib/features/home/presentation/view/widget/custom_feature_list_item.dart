@@ -1,4 +1,4 @@
-import 'package:book/features/home/presentation/view/widget/custom_item.dart';
+import 'package:book/features/home/presentation/view/widget/custom_book_item.dart';
 import 'package:flutter/material.dart';
 
 class CustomFeatureListItem extends StatelessWidget {
@@ -12,7 +12,7 @@ class CustomFeatureListItem extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemCount: 3,
           itemBuilder: (context, index) {
-            return CustomItem();
+            return CustomBookItem();
           }),
     );
   }
