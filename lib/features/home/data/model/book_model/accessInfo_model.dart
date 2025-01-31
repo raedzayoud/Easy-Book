@@ -1,3 +1,6 @@
+import 'package:book/features/home/data/model/book_model/epub_model.dart';
+import 'package:book/features/home/data/model/book_model/pdf_model.dart';
+
 class AccessInfo {
   String? country;
   String? viewability;
