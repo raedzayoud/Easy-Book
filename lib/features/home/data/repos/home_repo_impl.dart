@@ -20,8 +20,9 @@ class HomeRepoImpl implements HomeRepo {
         return left(ServeurFailure(errorsMessage: "No books found"));
       }
 
-      List<BookModel> listNewestBook =
-          (response['items'] as List).map((e) => BookModel.fromJson(e)).toList();
+      List<BookModel> listNewestBook = (response['items'] as List)
+          .map((e) => BookModel.fromJson(e))
+          .toList();
 
       return right(listNewestBook);
     } catch (e) {
@@ -36,15 +37,19 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       var response = await apiservice.get(
-          endPoints: "volumes?q=flutter&filter=free-ebooks");
+        endPoints: "volumes?q=Programming&Filtering=free-ebooks&maxResults=40&startIndex=0",
+      );
 
       if (response == null || response['items'] == null) {
         print("No books found");
         return left(ServeurFailure(errorsMessage: "No books found"));
       }
 
-      List<BookModel> listBook =
-          (response['items'] as List).map((e) => BookModel.fromJson(e)).toList();
+      List<BookModel> listBook = [];
+      (response['items'] as List).forEach((e) {
+        listBook.add(BookModel.fromJson(e));
+      });
+      print(listBook);
 
       return right(listBook);
     } catch (e) {

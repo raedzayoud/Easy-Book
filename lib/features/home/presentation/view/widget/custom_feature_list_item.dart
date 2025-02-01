@@ -17,16 +17,18 @@ class CustomFeatureListItem extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.3,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: 3,
+                itemCount: state.list.length,
                 itemBuilder: (context, index) {
-                  return CustomBookItem();
+                  return CustomBookItem(
+                    imageurl: "${state.list[index].volumeInfo!.imageLinks!.thumbnail}",
+                  );
                 }),
           );
         } else if (state is FeatureBooksFailure) {
           return CustomError(errorMessage: state.errorMessage);
         } else {
-          return Column();
-          //return CustomLoadingIndicator();
+          //return Column();
+          return CustomLoadingIndicator();
         }
       },
     );

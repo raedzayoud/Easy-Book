@@ -17,7 +17,7 @@ class BookDetailsSection extends StatelessWidget {
         Container(
           margin:
               EdgeInsets.only(left: width * 0.25, right: width * 0.1, top: 10),
-          child: CustomBookItem(),
+          child: CustomBookItem(imageurl: "https://picsum.photos/200/300",),
         ),
         Text(
           "The Jungle Book",
