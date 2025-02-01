@@ -24,7 +24,8 @@ class EasyBookApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-            create: (context) => FeatureBooksCubit(getIt.get<HomeRepoImpl>())),
+            create: (context) => FeatureBooksCubit(
+                getIt.get<HomeRepoImpl>())..fetchcubitFeaturedBooks()),
         BlocProvider(
             create: (context) => NewestBooksCubit(getIt.get<HomeRepoImpl>())),
       ],

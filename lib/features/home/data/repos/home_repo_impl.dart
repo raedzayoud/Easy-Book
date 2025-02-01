@@ -12,38 +12,47 @@ class HomeRepoImpl implements HomeRepo {
   @override
   Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
     try {
-      var data = await apiservice.get(
+      var response = await apiservice.get(
           endPoints:
-              "volumes?q=subject:Programming&Filtering=free-ebooks&Sorting=newest");
-      List<BookModel> listNewestBook = [];
-      for (var i = 0; i < data.length; i++) {
-        listNewestBook.add(BookModel.fromJson(data[i]));
+              "volumes?q=subject:Programming&filter=free-ebooks&orderBy=newest");
+
+      if (response == null || response['items'] == null) {
+        return left(ServeurFailure(errorsMessage: "No books found"));
       }
+
+      List<BookModel> listNewestBook =
+          (response['items'] as List).map((e) => BookModel.fromJson(e)).toList();
+
       return right(listNewestBook);
     } catch (e) {
       if (e is DioException) {
-        return Left(ServeurFailure.fromDioError(e));
+        return left(ServeurFailure.fromDioError(e));
       }
-      return Left(ServeurFailure(errorsMessage: e.toString()));
+      return left(ServeurFailure(errorsMessage: e.toString()));
     }
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks()async {
+  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
-      var data = await apiservice.get(
-          endPoints:
-              "volumes?q=subject:Programming&Filtering=free-ebooks");
-      List<BookModel> listBook = [];
-      for (var i = 0; i < data.length; i++) {
-        listBook.add(BookModel.fromJson(data[i]));
+      var response = await apiservice.get(
+          endPoints: "volumes?q=flutter&filter=free-ebooks");
+
+      if (response == null || response['items'] == null) {
+        print("No books found");
+        return left(ServeurFailure(errorsMessage: "No books found"));
       }
+
+      List<BookModel> listBook =
+          (response['items'] as List).map((e) => BookModel.fromJson(e)).toList();
+
       return right(listBook);
     } catch (e) {
       if (e is DioException) {
-        return Left(ServeurFailure.fromDioError(e));
+        return left(ServeurFailure.fromDioError(e));
       }
-      return Left(ServeurFailure(errorsMessage: e.toString()));
+      print(e.toString());
+      return left(ServeurFailure(errorsMessage: e.toString()));
     }
   }
 }
