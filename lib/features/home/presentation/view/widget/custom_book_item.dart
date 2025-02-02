@@ -1,5 +1,7 @@
 import 'package:book/core/utlis/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomBookItem extends StatelessWidget {
   final String imageurl;
@@ -7,13 +9,18 @@ class CustomBookItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 2.7 / 4,
-      child: Container(
-        decoration: BoxDecoration(
-            //color: Colors.red,
-            image: DecorationImage(
-                fit: BoxFit.fill, image: NetworkImage(imageurl))),
+    return Padding(
+      padding: const EdgeInsets.only(right: 8),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: AspectRatio(
+          aspectRatio: 2.7 / 4,
+          child: CachedNetworkImage(
+            fit: BoxFit.fill,
+            imageUrl: imageurl,
+            errorWidget: (context, url, error) =>Icon(Icons.error,size: 50,),
+          ),
+        ),
       ),
     );
   }
