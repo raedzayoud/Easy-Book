@@ -43,7 +43,8 @@ class ServeurFailure extends Failure {
         return ServeurFailure(
             errorsMessage: "Unexpected Error, please try later");
       default:
-      return ServeurFailure(errorsMessage: "Oops, there was an error. Please try again.");
+        return ServeurFailure(
+            errorsMessage: "Oops, there was an error. Please try again.");
     }
   }
 
