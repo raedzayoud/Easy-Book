@@ -27,13 +27,12 @@ class HomeViewBody extends StatelessWidget {
                   children: [
                     CustomAppar(),
                     CustomFeatureListItem(),
+                    SizedBox(height: 10,),
                     Text(
-                      "Best Seller",
+                      "Newest Books",
                       style: AppStyles.textStyle18,
                     ),
                     SizedBox(height: 10,),
-                    
-                    //CustomListItems(),
                   ],
                 ),
               ),

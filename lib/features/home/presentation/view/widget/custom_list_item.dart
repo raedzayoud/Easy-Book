@@ -1,19 +1,32 @@
-
+import 'package:book/core/widgets/custom_error.dart';
+import 'package:book/core/widgets/custom_loading_indicator.dart';
+import 'package:book/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'package:book/features/home/presentation/view/widget/custom_list_best_seller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomListItems extends StatelessWidget {
   const CustomListItems({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        padding: EdgeInsets.zero,
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: 5,
-        itemBuilder: (context, index) {
-          return CustomListBestSeller();
-        });
+    return BlocBuilder<NewestBooksCubit, NewestBooksState>(
+      builder: (context, state) {
+        if (state is NewestBooksSuccess) {
+          return ListView.builder(
+              padding: EdgeInsets.zero,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: state.list.length,
+              itemBuilder: (context, index) {
+                return CustomListNewestBook(bookModel: state.list[index],);
+              });
+        } else if (state is NewestBooksFailure) {
+          return CustomError(errorMessage: state.errorMessage);
+        } else {
+          return CustomLoadingIndicator();
+        }
+      },
+    );
   }
 }

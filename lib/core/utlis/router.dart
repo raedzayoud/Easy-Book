@@ -1,7 +1,6 @@
 import 'package:book/features/home/presentation/view/book_details_view.dart';
 import 'package:book/features/home/presentation/view/home_view.dart';
 import 'package:book/features/search/presentation/view/search_view.dart';
-import 'package:book/features/search/presentation/view/widgets/seach_view_body.dart';
 import 'package:book/features/splash/presentation/view/splash_view.dart';
 import 'package:go_router/go_router.dart';
 

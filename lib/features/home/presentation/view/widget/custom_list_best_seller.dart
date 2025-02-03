@@ -1,12 +1,17 @@
 import 'package:book/constant.dart';
 import 'package:book/core/utlis/assets.dart';
 import 'package:book/core/utlis/styles.dart';
+import 'package:book/core/widgets/custom_image.dart';
+import 'package:book/features/home/data/model/book_model/book_model.dart';
+import 'package:book/features/home/presentation/view/widget/customauthorsbooks.dart';
 import 'package:book/features/home/presentation/view/widget/rating_book.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class CustomListBestSeller extends StatelessWidget {
-  const CustomListBestSeller({super.key});
+class CustomListNewestBook extends StatelessWidget {
+  final BookModel? bookModel;
+  const CustomListNewestBook({super.key, this.bookModel});
 
   @override
   Widget build(BuildContext context) {
@@ -14,19 +19,14 @@ class CustomListBestSeller extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
+          padding: const EdgeInsets.only(bottom: 7, right: 10),
           child: SizedBox(
             height: 150,
             child: AspectRatio(
-              aspectRatio: 2.5 / 4,
-              child: Container(
-                decoration: const BoxDecoration(
-                    //color: Colors.red,
-                    image: DecorationImage(
-                        fit: BoxFit.fill,
-                        image: AssetImage(AppImages.testimage))),
-              ),
-            ),
+                aspectRatio: 2.6 / 4,
+                child: CustomNetworkImage(
+                  bookModel: bookModel!,
+                )),
           ),
         ),
         const SizedBox(
@@ -41,7 +41,7 @@ class CustomListBestSeller extends StatelessWidget {
                 child: SizedBox(
                     width: MediaQuery.of(context).size.width * .5,
                     child: Text(
-                      "Harry Poter and the Global of Fire",
+                      bookModel!.volumeInfo!.title!,
                       style: AppStyles.textStyle20
                           .copyWith(fontFamily: KGTSectraFine),
                       maxLines: 2,
@@ -51,9 +51,8 @@ class CustomListBestSeller extends StatelessWidget {
               const SizedBox(
                 height: 3,
               ),
-              Text(
-                "J.K Rowling",
-                style: AppStyles.textStyle14,
+              CustomAuthorsBooks(
+                bookModel: bookModel!,
               ),
               const SizedBox(
                 height: 3,
@@ -62,12 +61,14 @@ class CustomListBestSeller extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "19.99 £",
+                    "Free",
                     style: AppStyles.textStyle20
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
-                  
-                  RatingBook()
+                  RatingBook(
+                    count: bookModel!.volumeInfo!.pageCount!,
+                    rating: "5",
+                  )
                 ],
               )
             ],

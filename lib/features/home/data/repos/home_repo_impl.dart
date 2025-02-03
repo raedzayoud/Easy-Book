@@ -14,7 +14,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var response = await apiservice.get(
           endPoints:
-              "volumes?q=subject:Programming&filter=free-ebooks&orderBy=newest");
+              "volumes?q=Programming&orderBy=newest&maxResults=30&startIndex=0");
 
       if (response == null || response['items'] == null) {
         return left(ServeurFailure(errorsMessage: "No books found"));
@@ -37,7 +37,7 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       var response = await apiservice.get(
-        endPoints: "volumes?q=Programming&Filtering=free-ebooks&maxResults=40&startIndex=0",
+        endPoints: "volumes?q=Programming&maxResults=30&startIndex=0",
       );
 
       if (response == null || response['items'] == null) {

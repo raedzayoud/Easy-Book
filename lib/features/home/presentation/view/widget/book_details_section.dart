@@ -44,7 +44,7 @@ class BookDetailsSection extends StatelessWidget {
         ),
         Container(
           margin: EdgeInsets.symmetric(horizontal: width * 0.29),
-          child: RatingBook(),
+          child: RatingBook(rating: "5",count: 5,),
         ),
         SizedBox(
           height: 37,
