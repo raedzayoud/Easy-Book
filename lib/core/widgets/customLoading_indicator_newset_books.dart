@@ -10,7 +10,7 @@ class CustomloadingIndicatornewsetBooks extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.3,
       child: Row(
         children: const [
-          Expanded(child: Skeleton()),
+          Expanded(child: SkeletonNewestBook()),
           SizedBox(width: 10), // Spacing between items
           Expanded(child: ShimmerText()),
         ],
@@ -19,8 +19,8 @@ class CustomloadingIndicatornewsetBooks extends StatelessWidget {
   }
 }
 
-class Skeleton extends StatelessWidget {
-  const Skeleton({super.key});
+class SkeletonNewestBook extends StatelessWidget {
+  const SkeletonNewestBook({super.key});
 
   @override
   Widget build(BuildContext context) {

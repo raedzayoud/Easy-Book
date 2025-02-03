@@ -10,17 +10,17 @@ class CustomLoadingIndicatorFeatureBooks extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.3,
       child: Row(
         children: [
-          Expanded(child: Skeleton()),
+          Expanded(child: SkeletonFeatureBooks()),
           SizedBox(width: 10,),
-          Expanded(child: Skeleton()),
+          Expanded(child: SkeletonFeatureBooks()),
         ],
       ),
     );
   }
 }
 
-class Skeleton extends StatelessWidget {
-  const Skeleton({
+class SkeletonFeatureBooks extends StatelessWidget {
+  const SkeletonFeatureBooks({
     super.key,
   });
 
