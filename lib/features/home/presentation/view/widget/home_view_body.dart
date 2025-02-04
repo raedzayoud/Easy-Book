@@ -1,7 +1,7 @@
 import 'package:book/core/utlis/router.dart';
 import 'package:book/core/utlis/styles.dart';
 import 'package:book/features/home/presentation/view/widget/custom_feature_list_item.dart';
-import 'package:book/features/home/presentation/view/widget/custom_list_best_seller.dart';
+import 'package:book/features/home/presentation/view/widget/custom_list_newest_book.dart';
 import 'package:book/features/home/presentation/view/widget/custom_list_item.dart';
 import 'package:book/features/home/presentation/view/widget/customappar.dart';
 import 'package:flutter/material.dart';

@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomApparBookDetails extends StatelessWidget {
   const CustomApparBookDetails({super.key});
@@ -9,7 +10,9 @@ class CustomApparBookDetails extends StatelessWidget {
     return Row(
       children: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            GoRouter.of(context).pop();
+          },
           icon: Icon(Icons.close),
         ),
         Spacer(),

@@ -1,5 +1,5 @@
 import 'package:book/core/utlis/styles.dart';
-import 'package:book/features/home/presentation/view/widget/custom_list_best_seller.dart';
+import 'package:book/features/home/presentation/view/widget/custom_list_newest_book.dart';
 import 'package:book/features/search/presentation/view/widgets/custom_search_text_field.dart';
 import 'package:flutter/material.dart';
 
