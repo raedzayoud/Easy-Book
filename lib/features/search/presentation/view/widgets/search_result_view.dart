@@ -16,20 +16,19 @@ class SearchResultView extends StatelessWidget {
     return BlocBuilder<SearchCubit, SearchState>(builder: (context, state) {
       if (state is SearchInitial) {
         return Center(
-          child: Text("Start typing to search for books",style: AppStyles.textStyle18,),
+          child: Text("Start typing to search for books",style: AppStyles.textStyle18,textAlign: TextAlign.center,),
         );
       } else if (state is SearchSuccess) {
         return ListView.builder(
+          physics: NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
             padding: EdgeInsets.zero,
             itemCount: state.book.length,
             itemBuilder: (context, index) {
-              return Padding(
-                padding: EdgeInsets.symmetric(vertical: 10),
-                child: InkWell(
-                  onTap: ()=>GoRouter.of(context).push(AppRouter.KBookDetails,extra: state.book[index]),
-                  child: CustomListNewestBook(
-                    bookModel: state.book[index],
-                  ),
+              return InkWell(
+                onTap: ()=>GoRouter.of(context).push(AppRouter.KBookDetails,extra: state.book[index]),
+                child: CustomListNewestBook(
+                  bookModel: state.book[index],
                 ),
               );
             });

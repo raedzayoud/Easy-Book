@@ -57,7 +57,7 @@ class BookDetailsSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: width * .32),
           child: RatingBook(
             rating: "5",
-            count: bookModel.volumeInfo!.pageCount!,
+            count: bookModel.volumeInfo?.pageCount ?? 0,
           ),
         ),
         SizedBox(

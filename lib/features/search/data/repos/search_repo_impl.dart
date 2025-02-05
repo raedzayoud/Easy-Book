@@ -12,7 +12,7 @@ class SearchRepoImpl implements SearchReop {
   Future<Either<Failure, List<BookModel>>> FetchSearchData({required String title})async {
     try {
       var response = await apiservice.get(
-        endPoints: "volumes?q=intitle:$title",
+        endPoints: "volumes?q=intitle:$title&Filtering=free-ebooks",
       );
 
       if (response == null || response['items'] == null) {

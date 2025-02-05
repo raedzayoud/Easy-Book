@@ -29,7 +29,7 @@ class EasyBookApp extends StatelessWidget {
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,
-        debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(
             scaffoldBackgroundColor: KPrimaryColor,
             textTheme:

@@ -19,5 +19,11 @@ class SearchCubit extends Cubit<SearchState> {
     });
   }
 
+  checkInputSearch(val){
+    if(val==""){
+      emit(SearchInitial());
+    }
+  }
+
 
 }

@@ -5,11 +5,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomSearchTextField extends StatelessWidget {
   final TextEditingController? controller;
-  const CustomSearchTextField({super.key, required this.controller});
+  final void Function(String)? onChanged;
+  const CustomSearchTextField({super.key, required this.controller,required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      onChanged: onChanged,
       controller: controller,
       decoration: InputDecoration(
           enabledBorder: BuildOutlineInputBorder(),

@@ -16,8 +16,8 @@ class BookDetailsView extends StatelessWidget {
       create: (context) {
         final cubit = SimilarBookCubit(getIt.get<HomeRepoImpl>());
         cubit.fetchcubitSimilarBooks(
-          categorie: (bookModel.volumeInfo!.categories?.isNotEmpty ?? false)
-              ? bookModel.volumeInfo!.categories![0]
+          title: (bookModel.volumeInfo!.title?.isNotEmpty ?? false)
+              ? bookModel.volumeInfo!.title!
               : "",
         );
         return cubit;
