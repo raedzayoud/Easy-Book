@@ -9,8 +9,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CustomListNewestBook extends StatelessWidget {
-  final BookModel? bookModel;
-  const CustomListNewestBook({super.key, this.bookModel});
+  final BookModel bookModel;
+  const CustomListNewestBook({super.key,required this.bookModel});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class CustomListNewestBook extends StatelessWidget {
             child: AspectRatio(
                 aspectRatio: 2.6 / 4,
                 child: CustomNetworkImage(
-                  bookModel: bookModel!,)
+                  bookModel: bookModel,)
                   ),
           ),
         ),

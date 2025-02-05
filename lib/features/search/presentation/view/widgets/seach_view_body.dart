@@ -34,8 +34,9 @@ class SearchResultView extends StatelessWidget {
       itemBuilder: (context, index) {
       return Padding(
         padding: EdgeInsets.symmetric(vertical: 10),
-        child: CustomListNewestBook(),
+       // child: CustomListNewestBook(),
       );
     });
   }
 }
+

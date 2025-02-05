@@ -2,7 +2,6 @@ import 'package:book/core/utlis/function/launchcustomurl.dart';
 import 'package:book/core/widgets/custom_button.dart';
 import 'package:book/features/home/data/model/book_model/book_model.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class BookButton extends StatelessWidget {
   final BookModel bookModel;
