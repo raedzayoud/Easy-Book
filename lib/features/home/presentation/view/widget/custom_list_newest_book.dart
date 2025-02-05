@@ -1,11 +1,9 @@
 import 'package:book/constant.dart';
-import 'package:book/core/utlis/assets.dart';
 import 'package:book/core/utlis/styles.dart';
 import 'package:book/core/widgets/custom_image.dart';
 import 'package:book/features/home/data/model/book_model/book_model.dart';
 import 'package:book/features/home/presentation/view/widget/customauthorsbooks.dart';
 import 'package:book/features/home/presentation/view/widget/rating_book.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CustomListNewestBook extends StatelessWidget {
@@ -65,7 +63,7 @@ class CustomListNewestBook extends StatelessWidget {
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
                   RatingBook(
-                    count: bookModel!.volumeInfo!.pageCount!,
+                    count: bookModel.volumeInfo?.pageCount ?? 0,
                     rating: "5",
                   )
                 ],

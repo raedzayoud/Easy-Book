@@ -12,7 +12,7 @@ class CustomNetworkImage extends StatelessWidget {
       borderRadius: BorderRadius.circular(20),
       child: CachedNetworkImage(
         fit: BoxFit.fill,
-        imageUrl: "${bookModel!.volumeInfo!.imageLinks!.thumbnail}",
+        imageUrl: "${bookModel?.volumeInfo?.imageLinks?.thumbnail ?? ""}",
         errorWidget: (context, url, error) => Icon(
           Icons.error,
           size: 50,
