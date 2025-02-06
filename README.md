@@ -1,5 +1,7 @@
 # 📚 Easy Book
-A Flutter application for exploring and previewing free books online.
+
+Easy Book is a Flutter application that follows the MVVM (Model-View-ViewModel) architecture to provide a seamless experience for users to explore and preview free books online. The app allows users to search for books, view book details, and preview their content.
+
 
 ## 🌟 Features
 - 🏗️ MVVM Architecture
@@ -16,7 +18,6 @@ A Flutter application for exploring and previewing free books online.
 
 ## 💻 Technologies
 - 📱 Flutter
-- 🏛️ MVVM Architecture
 - 🔗 Google Books API
 
 
