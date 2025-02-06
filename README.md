@@ -6,7 +6,7 @@ A Flutter application for exploring and previewing free books online.
 - 🔍 Book Search 
 - 📖 Book Details
 - 👀 Content Preview
-- 🌐 API Integration
+- 🌐 Google Books API Integration
 
 ## 🚀 Getting Started
 1. Clone the repository
@@ -17,4 +17,6 @@ A Flutter application for exploring and previewing free books online.
 ## 💻 Technologies
 - 📱 Flutter
 - 🏛️ MVVM Architecture
-- 🔗 [Specific API Used]
+- 🔗 Google Books API
+
+
