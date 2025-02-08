@@ -18,6 +18,5 @@ Easy Book is a Flutter application that follows the MVVM (Model-View-ViewModel) 
 
 ## 💻 Technologies
 - 📱 Flutter
-- 🔗 Google Books API
 
 
